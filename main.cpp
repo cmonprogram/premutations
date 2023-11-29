@@ -30,11 +30,10 @@ std::deque<std::deque<T>> permutations_rec(std::list<T> input)
     }
     return result;
 }
-int main()
-{
-    std::list<int> input = {1, 2, 3};
-    auto result = permutations_rec(input);
 
+template <typename T>
+void PrintResult(std::deque<std::deque<T>> &result)
+{
     int i = 0;
     for (auto elements : result)
     {
@@ -48,4 +47,11 @@ int main()
     }
     std::cout << "----" << std::endl
               << "total: " << i << std::endl;
+}
+
+int main()
+{
+    std::list<int> input = {1, 2, 3};
+    auto result = permutations_rec(input);
+    PrintResult(result);
 }
